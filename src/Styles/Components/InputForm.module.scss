@@ -1,0 +1,52 @@
+@use "../global" as *;
+
+.InputForm {
+  display: flex;
+  height: 3.25rem;
+  width: 100%;
+  border-radius: $br;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  color: $tx_dark;
+  box-shadow: 0px 0.3px 0.9px $shadow, 0px 1.6px 3.6px $shadow;
+  transition: background-color 300ms;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 1rem 0.5rem;
+    .plus {
+      color: $blue;
+    }
+    &:disabled {
+      .plus {
+        cursor: auto;
+      }
+    }
+  }
+  input::-webkit-input-placeholder {
+    color: $blue;
+  }
+  input {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 0.75rem;
+    flex: 1;
+    border: none;
+    transition: color 300ms;
+    &:focus {
+      outline: none;
+      &::-webkit-input-placeholder {
+        color: lightgrey;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "../global" as *;
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #0000004d;
+  border-radius: $br;
+  display: inline-block;
+  margin: 0.25rem;
+  color: $tx;
+  svg {
+    font-size: 1rem;
+  }
+}

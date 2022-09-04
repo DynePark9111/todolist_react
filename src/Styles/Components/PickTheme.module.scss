@@ -1,0 +1,67 @@
+@use "../global" as *;
+
+$theme1: #5966afee;
+$theme2: #86598eee;
+$theme3: #9e4e60ee;
+$theme4: #b15f57ee;
+$theme5: #4a7258ee;
+$theme6: #467073ee;
+$theme7: #626974ee;
+$colors: $theme1, $theme2, $theme3, $theme4, $theme5, $theme6, $theme7;
+// When changing the colors (ThemeColor.ts ~ pickTheme.module.scss) *1
+
+.PickTheme {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eeeeeeee;
+  backdrop-filter: blur(2px);
+  width: 304px;
+  border-radius: $br;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  h5 {
+    cursor: auto;
+    color: $tx_dark;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    li {
+      position: relative;
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      @for $i from 1 through length($colors) {
+        &:nth-child(#{length($colors)}n + #{$i}) {
+          background: nth($colors, $i);
+        }
+      }
+      &#selected {
+        outline: 3px solid white;
+      }
+      .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        opacity: 0;
+        transition: opacity 200ms;
+        &#active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

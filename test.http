@@ -1,0 +1,32 @@
+@url=http://localhost:8080
+@Content-Type=application/json
+
+###
+GET {{url}}
+
+###
+GET {{url}}/todo
+
+###
+POST {{url}}/todo
+Content-Type: {{Content-Type}}
+
+{
+  "content":"make a todolist"
+}
+
+###
+POST {{url}}/todo
+Content-Type: {{Content-Type}}
+
+{
+  "content":"study Kotlin"
+}
+
+###
+PUT {{url}}/todo/complete/1
+###
+PUT {{url}}/todo/important/1
+
+###
+DELETE {{url}}/todo/3

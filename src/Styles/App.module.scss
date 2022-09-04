@@ -1,0 +1,13 @@
+@use "./global" as *;
+
+.App {
+  border-radius: $br;
+  margin: 1rem auto;
+  max-width: 800px;
+  padding: 1rem;
+  color: $tx;
+  width: 100vw;
+  height: 90vh;
+  transition: background-color 500ms;
+  min-width: $minw;
+}

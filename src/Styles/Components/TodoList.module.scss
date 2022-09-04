@@ -1,0 +1,87 @@
+@use "../global" as *;
+
+.TodoList {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.Todo {
+  display: flex;
+  height: 3.25rem;
+  width: 100%;
+  border-radius: $br;
+  padding: 0 1rem;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  color: $tx_dark;
+  box-shadow: 0px 0.3px 0.9px $shadow, 0px 1.6px 3.6px $shadow;
+  transition: background-color 300ms;
+  .circleAndCheck {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: $blue;
+    padding: 0.5rem;
+    cursor: pointer;
+    .check {
+      opacity: 0;
+      position: absolute;
+      color: white;
+      top: 12px;
+      left: 12px;
+      font-size: 0.5rem;
+      transition: opacity 300ms;
+    }
+    #completed {
+      opacity: 1;
+    }
+  }
+  .star {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    &#important {
+      color: gold;
+    }
+  }
+  .data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0.25rem 0.75rem;
+    flex: 1;
+    .content {
+      width: 100%;
+      height: 100%;
+      line-height: 28px;
+      max-width: 600px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: $tx_dark;
+      display: block;
+    }
+    .meta {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.75rem;
+      gap: 1rem;
+      .created {
+        color: lightgrey;
+        font-size: 0.5rem;
+        white-space: nowrap;
+      }
+    }
+  }
+  .delete {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+  }
+}

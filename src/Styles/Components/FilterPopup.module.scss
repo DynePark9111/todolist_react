@@ -1,0 +1,60 @@
+@use "../global" as *;
+
+.FilterPopup {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: $br;
+  width: 200px;
+  overflow: hidden;
+  color: $tx_dark;
+  box-shadow: rgb(0 0 0 / 13%) 0px 3.2px 7.2px 0px, rgb(0 0 0 / 11%) 0px 0.6px 1.8px 0px;
+  .title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    .arrow {
+      transition: transform 300ms;
+    }
+    #ascending {
+      transform: rotateX(180deg);
+    }
+    h5 {
+      margin-left: 0.5rem;
+      font-size: 16px;
+    }
+  }
+  hr {
+    border: none;
+    border-top: 1px solid $bd_grey;
+    width: 100%;
+  }
+  ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    li {
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      &:hover {
+        background-color: #00000011;
+      }
+      svg {
+        font-size: 1rem;
+      }
+      span {
+        margin-left: 0.5rem;
+      }
+      .arrows {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
